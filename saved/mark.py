@@ -25,12 +25,18 @@ with open(r'E:\resources\project\bert\InvestorSentimentAnalysisProject\saved\sam
     readerd = csv.reader(f)
     data_rows = list(readerd)
 
+with open(r'E:\resources\project\bert\InvestorSentimentAnalysisProject\saved\marks.csv', 'r', encoding='utf-8') as f:
+    readerl = csv.reader(f)
+    next(readerl)
+    label_rows = list(readerl)
+
 # with open(r'E:\resources\project\bert\InvestorSentimentAnalysisProject\saved\marks.csv', 'r', encoding='utf-8') as f:
 #     readerl = csv.reader(f)
 #     label_rows = list(readerl)
     
-bp = 0
-label_rows = []
+yanzheng(data_rows, label_rows)
+bp = len(label_rows)
+
 # 从最后一个标签对应的索引开始输入新标签
 for i in range(bp,len(data_rows)):
 
@@ -47,5 +53,5 @@ for i in range(bp,len(data_rows)):
     except ValueError:
         print("Invalid input. Please enter a number or 'q' to quit.")
 
-    save_labels(r'E:\resources\project\bert\InvestorSentimentAnalysisProject\saved\marks.csv', label_rows)
+    save_labels(r'E:\resources\project\bert\InvestorSentimentAnalysisProject\saved\marks2.csv', label_rows)
     print("标签已保存到labels.csv文件中。")
