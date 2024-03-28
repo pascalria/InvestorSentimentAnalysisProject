@@ -21,7 +21,7 @@ def yanzheng(data, label):
         print((data[i], label[i]))
     print(data[len(label)])
 
-with open(r'E:\resources\project\bert\InvestorSentimentAnalysisProject\saved\samples.csv', 'r', encoding='utf-8') as f:
+with open(r'E:\resources\project\bert\InvestorSentimentAnalysisProject\saved\samples2.csv', 'r', encoding='utf-8') as f:
     readerd = csv.reader(f)
     data_rows = list(readerd)
 

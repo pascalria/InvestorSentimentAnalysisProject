@@ -6,7 +6,7 @@ import importlib
 import csv
 # from random import shuffle
 
-with open(r'E:\resources\project\bert\InvestorSentimentAnalysisProject\saved\comment.csv', 'r', encoding='utf-8') as f: 
+with open(r'E:\resources\project\bert\bert-master\data_collection\saved\comment.csv', 'r', encoding='utf-8') as f: 
     readerd = csv.reader(f)
     next(readerd)
     data_rows = list(readerd)
@@ -14,22 +14,19 @@ with open(r'E:\resources\project\bert\InvestorSentimentAnalysisProject\saved\com
 data_rows = data_rows[495007:]
 print(data_rows[0])
 
-# 设置训练集比例
-train_ratio = 0.8
-
 random = importlib.import_module('random')
 # 打乱原始数据列表
 random.shuffle(data_rows)
 print(data_rows[0])
 
 # 计算抽取大小
-size = int(7000)
+size = int(20000)
 
 randitem = random.sample(data_rows, k=size)
 print(len(randitem))
 
 
-with open(r'E:\resources\project\bert\InvestorSentimentAnalysisProject\saved\samples.csv', 'w', newline='', encoding='utf-8') as f:
+with open(r'E:\resources\project\bert\InvestorSentimentAnalysisProject\saved\samples2.csv', 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         
         for row in randitem:
