@@ -1,2 +1,6 @@
 # InvestorSentimentAnalysisProject
 ## 某人的毕业设计，乱七八糟的，随便看看就好了
+data collection里面是爬虫代码
+saved里面是乱七八糟的数据预处理代码
+output里面是对预测完的数据进行处理的代码
+runbert是更改的bert代码和启动命令参数
